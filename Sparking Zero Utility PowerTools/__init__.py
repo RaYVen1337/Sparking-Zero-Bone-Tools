@@ -1,12 +1,15 @@
 bl_info = {
-    "name": "Sparking Zero Bone Tools",
+    "name": "Sparking Zero Utility PowerTools",
     "author": "RaYVen",
-    "version": (0, 1),
+    "version": (0, 2),
     "blender": (4, 3, 0),
-    "location": "View3D > Tools > Bone Collections",
-    "description": "Bone collection organization tools for Sparking Zero",
+    "location": "View3D > Sidebar > SZUP",
+    "description": "Bone collection organization and utility tools for Sparking Zero",
     "warning": "",
     "category": "Rigging",
+    "support": "COMMUNITY",
+    "wiki_url": "",
+    "tracker_url": "",
 }
 
 import bpy

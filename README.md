@@ -1,34 +1,47 @@
-# 🦴 Sparking Zero Bone Tools
+# 🔧 SZUP (Sparking Zero Utility PowerTools)
 
-![demo](https://github.com/user-attachments/assets/9b573fb2-d7e0-4b5f-b275-7562781a4838)
+![Tool Demo](demo.gif)
 
-A sleek Blender addon for Sparking Zero modders. Automatically organizes your bones into collections based on naming conventions.<br>Allows for easier posing and weight painting.
-## Features
-- One-click bone organization
+A powerful Blender addon for Sparking Zero modders. Streamlines your workflow with smart bone organization and essential utilities.
+
+## ✨ Features
+### Bone Collection Organization
+- One-click bone sorting
 - Smart collection grouping
 - Auto-hiding of utility collections
-- Supports all SZ bone naming conventions
+- Intelligent naming convention detection
 
-## Installation
-1. Download the latest release
-2. Fire up Blender (only tested on 4.3.0)
-3. Edit > Preferences > Add-ons > Install
-4. Select the downloaded zip
-5. Enable the addon
+### Utility Tools
+- Quick Pose/Rest position toggle from any mode
+- More features coming soon!
 
-## Usage
-1. Select your armature
-2. Hit 'Organize Bone Collections' in the Tool panel
-3. Done! Your bones are now neatly organized
-
-## Collections
+## 🎯 Collections
 - Main Bones (visible)
 - AIM Bones
 - SOCKET Bones
 - EFFECT Bones
 - IK Bones
 - UTILITY Bones
+- HAIR Bones
+- ACCE Bones
+- OBI Bones
 - Smart Jiggle Groups
-- And more...
+- Smart Driver Groups
 
-Created by RaYVen 🔧
+## 🚀 Installation
+1. Download the latest release
+2. Fire up Blender (4.3+)
+3. Edit > Preferences > Add-ons > Install
+4. Select the downloaded zip
+5. Enable the addon
+
+## 💡 Usage
+1. Find SZUP in the N-panel sidebar
+2. Select your armature
+3. Hit 'Organize Bone Collections'
+4. Use the utility tools as needed
+
+## 🛠️ Upcoming Features
+- no ideas yet xD
+
+Created by RaYVen 🎮
