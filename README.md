@@ -2,7 +2,7 @@
 
 ![demo](https://github.com/user-attachments/assets/df71c763-b552-4619-937b-413bc49180ff)
 
-A powerful Blender addon for Sparking Zero modders. Streamlines your workflow with smart bone organization and essential utilities.
+SZUP (pronounced Soup) is a powerful Blender addon for Sparking Zero modders. Streamlines your workflow with smart bone organization and essential utilities.
 
 ## ✨ Features
 ### Bone Collection Organization
