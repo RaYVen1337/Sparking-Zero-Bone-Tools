@@ -6,17 +6,16 @@ def create_collection(armature, name):
     """Create a new bone collection if it doesn't exist, and return it."""
     if name not in armature.data.collections:
         collection = armature.data.collections.new(name)
-        # Hide all collections except "Main Bones" by default
-        if name != "Main Bones":
-            collection.hide_viewport = True
+        # Hide all collections except "main Bones" by default
+        if name != "main Bones":
+            collection.is_visible = False
         return collection
     return armature.data.collections.get(name)
 
 
 def assign_to_collection(bone, collection):
     """Assign a bone to a collection."""
-    collection.objects.link(bone.id_data)  # Ensure the armature is linked
-    bone.collections.link(collection)
+    collection.assign(bone)
 
 
 def extract_base_name(name):
@@ -58,7 +57,7 @@ def organize_bone_collections():
         armature.data.collections.remove(coll)
 
     # 3) Create primary collections
-    main_collection = create_collection(armature, "Main Bones")
+    main_collection = create_collection(armature, "main Bones")
     aim_collection = create_collection(armature, "AIM Bones")
     socket_collection = create_collection(armature, "SOCKET Bones")
     effect_collection = create_collection(armature, "EFFECT Bones")
@@ -112,11 +111,11 @@ def organize_bone_collections():
         elif "OBI" in name:
             assign_to_collection(bone, obi_collection)
         else:
-            # Assign to "Main Bones" if no special category
+            # Assign to "main Bones" if no special category
             assign_to_collection(bone, main_collection)
 
 
-# --- Armature Toggle Operator ---
+# --- Pose/Rest Toggle Operator ---
 
 class TOGGLE_ARMATURE_POS(bpy.types.Operator):
     """Toggle Armature Between Pose and Rest Position"""
@@ -185,25 +184,21 @@ class VIEW3D_PT_sz_utilities(bpy.types.Panel):
     bl_idname = "VIEW3D_PT_sz_utilities"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = 'SZ Utilities'
+    bl_category = 'SZUP'
 
     def draw(self, context):
         layout = self.layout
 
-        # Header
+        # Bone Collection Organizer Section
         layout.label(text="Bone Tools", icon='BONE_DATA')
-
-        # Organize Bone Collections Button
         layout.operator(AUTO_OT_organize_bone_collections.bl_idname, icon='GROUP_BONE')
 
         # Separator
         layout.separator()
 
-        # Header for Utilities
-        layout.label(text="Utilities", icon='MODIFIER')
-
-        # Toggle Pose/Rest Button
-        layout.operator("armature.toggle_armature_pos", icon='ARMATURE_DATA', text="Toggle Pose/Rest")
+        # Pose/Rest Toggle Section
+        layout.label(text="Utilities", icon='ARMATURE_DATA')
+        layout.operator(TOGGLE_ARMATURE_POS.bl_idname, icon='ARMATURE_DATA', text="Toggle Pose/Rest")
 
 
 # --- Message Box for Error Handling (Optional) ---
@@ -226,9 +221,11 @@ def register():
     for cls in classes:
         bpy.utils.register_class(cls)
 
+
 def unregister():
     for cls in reversed(classes):
         bpy.utils.unregister_class(cls)
+
 
 # For running this file directly (not needed if using as an addon, but handy for testing):
 if __name__ == "__main__":
