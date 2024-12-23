@@ -1,6 +1,6 @@
 # 🦴 Sparking Zero Bone Tools
 
-![Tool Demo](\demo.gif)
+![demo](https://github.com/user-attachments/assets/9b573fb2-d7e0-4b5f-b275-7562781a4838)
 
 A sleek Blender addon for Sparking Zero modders. Automatically organizes your bones into collections based on naming conventions.<br>Allows for easier posing and weight painting.
 ## Features
