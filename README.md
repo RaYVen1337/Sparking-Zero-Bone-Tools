@@ -1,6 +1,6 @@
 # 🔧 SZUP (Sparking Zero Utility PowerTools)
 
-![Tool Demo](demo.gif)
+![demo](https://github.com/user-attachments/assets/df71c763-b552-4619-937b-413bc49180ff)
 
 A powerful Blender addon for Sparking Zero modders. Streamlines your workflow with smart bone organization and essential utilities.
 
