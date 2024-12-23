@@ -4,8 +4,8 @@ def create_collection(armature, name):
     """Create a new bone collection if it doesn't exist, and return it."""
     if name not in armature.data.collections:
         collection = armature.data.collections.new(name)
-        # Hide all collections except "Uncategorized Bones" by default
-        if name != "Uncategorized Bones":
+        # Hide all collections except "main Bones" by default
+        if name != "main Bones":
             collection.is_visible = False
         return collection
     return armature.data.collections.get(name)
@@ -54,7 +54,7 @@ def organize_bone_collections():
         armature.data.collections.remove(coll)
 
     # 3) Create primary collections
-    uncategorized_collection = create_collection(armature, "Uncategorized Bones")
+    main_collection = create_collection(armature, "main Bones")
     aim_collection = create_collection(armature, "AIM Bones")
     socket_collection = create_collection(armature, "SOCKET Bones")
     effect_collection = create_collection(armature, "EFFECT Bones")
@@ -108,8 +108,8 @@ def organize_bone_collections():
         elif "OBI" in name:
             assign_to_collection(bone, obi_collection)
         else:
-            # Assign to "Uncategorized Bones" if no special category
-            assign_to_collection(bone, uncategorized_collection)
+            # Assign to "main Bones" if no special category
+            assign_to_collection(bone, main_collection)
 
 
 class AUTO_OT_organize_bone_collections(bpy.types.Operator):
